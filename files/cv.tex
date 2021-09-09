@@ -1,0 +1,323 @@
+%-------------------------
+% Entry-level Resume in LaTeX
+% Last Edits - July 19, 2021
+% Author : Jayesh Sanwal
+% Reach out to me on LinkedIn(/in/jsanwal), with any suggestions, ideas, etc.
+%------------------------
+
+%%-------------------------------------
+% Author Notes here -
+% 1) Change " Author+an = {N=highlight}" in "Publications.bib", where N is the number at which your name appears
+% 2) Use "\vspace" wisely, that would change spacing, and is currently being used as a hacky fix
+% 3) Do not delete the fonts in the left side
+% 4) Use the "Rich Text" feature on Overleaf - On the top panel next to source. Makes it much easier for starters on LaTeX to use this template
+% 5) Do NOT use periods at the end of bullet points, the sample (ipsum) text might have it
+% 6) Use "maxbibnames" on this file to change the maximum number of authors on the paper (Credits: Dr. Natasha Krell) - Default is 3, but change line 92 to add authors
+
+%%-------------------------------------
+% Changes from last version -
+% 1) Removed areas of Expertise as a separate section - integrated into the summary section
+% 2) Changed Focus to Academic Projects instead of Education
+% 3) Made the integrated summary 3 lines over 1
+% 4) Changed spacing between sections and bullets
+% 5) Changed the number of authors to be user customized
+
+%%-------------------------------------
+% Changes to be made here -
+% 1) Shift to Class file, make changes here
+% 2) Use a fonts folder
+% 3) Incorporate Leadership & volunteering together
+% 4) Remove \vspace based 'hacky' fixes
+%%-------------------------------------
+
+
+\documentclass[a4,11pt]{article}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
+%%%%%%% --------------------------------------------------------------------------------------
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+ \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\hypersetup{colorlinks=true,urlcolor=black}
+\usepackage[11pt]{moresize}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[inline]{enumitem}
+\usepackage{array}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=cyan,
+}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{anyfontsize}
+
+%%%% Set Margins
+\usepackage[margin=1.2cm, top=1.2cm]{geometry}
+
+%%%% Set Fonts
+\setmainfont[
+BoldFont=SourceSansPro-Semibold.otf, %SourceSansPro-Bold.otf
+ItalicFont=SourceSansPro-RegularIt.otf
+]{SourceSansPro-Regular.otf}
+\setsansfont{SourceSansPro-Semibold.otf}
+
+%%%% Set Page
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%% Set URL Style
+\urlstyle{same}
+
+%%%% Set Indentation
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%%%% Set Secondary Color
+\definecolor{UI_blue}{RGB}{32, 64, 151}
+
+%%%% Define New Commands
+\usepackage[style=nature, maxbibnames=3]{biblatex}
+\addbibresource{Publications.bib}
+
+%%%% Bold Name in Publications
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+%%%% Set Sections formatting
+\titleformat{\section}{
+\color{UI_blue} \scshape \raggedright \large 
+}{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
+
+%%%% Set Subtext Formatting
+\newcommand{\subtext}[1]{
+#1\par\vspace{-0.2cm}}
+
+% \newcommand{\subtextit}[1]{\vspace{0.15cm}
+% \textit{ #1 \vspace{-0.2cm}} }
+
+%%%% Set Item Spacing
+\setlist[itemize]{align=parleft,left=0pt..1em}
+
+%%%% New Itemize "Zitemize" Formatting - tighter spacing than itemize
+\newenvironment{zitemize}{
+\begin{itemize}\itemsep0pt \parskip0pt \parsep1pt}
+{\end{itemize}\vspace{-0.5cm}}
+
+
+%%%% Define Skills Bold Formatting
+\newcommand{\hskills}[1]{
+\textbf{\bfseries #1} }
+
+%%%% Set Subsection formatting
+\titleformat{\subsection}{\vspace{-0.1cm} 
+\bfseries \fontsize{11pt}{2cm}}{}{0em}{}[\vspace{-0.2cm}]
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  END OF "DO NOT TOUCH" REGION
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+
+\begin{document}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HEADER
+%%%%%%% --------------------------------------------------------------------------------------
+\begin{center}
+
+    \begin{minipage}[b]{0.9\textwidth}
+            \centering
+            {\Huge RUOQI WANG} \\ %
+            \vspace{0.2cm}
+			   Homepage: \href{https://wang-rq.github.io}{wang-rq.github.io} \space \space \space \space \space \space \space \space \space \space \space \space
+Email: \href{mailto:wangrq29@mail2.sysu.edu.cn}{wangrq29@mail2.sysu.edu.cn} \space \space \space \space \space \space \space \space \space \space \space \space 
+Tel: (+86) 132-0206-7930 
+	\vspace{0.1cm}
+    \end{minipage}% 
+
+    
+\vspace{-0.15cm} 
+{\color{UI_blue} \hrulefill}
+\end{center}
+
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  EDUCATION
+%%%%%%% --------------------------------------------------------------------------------------
+\section{\large \textbf{Education}}
+
+\subsection*{Sun Yat-sen University (SYSU),\space \space \space \space  B.Eng., \space \space \space \space    School of Computer Science and Engineering. \hfill Sep. 2018 --- Jun. 2022 } 
+    \begin{zitemize}
+        \item Major: Computer Science and Technology
+		\item Weighted Average Grade: \textbf{89/100} (GPA: \textbf{3.8/4.0}) \\
+		 - \space \space Freshman Year: 85/100, \space \space Sophomore Year: 91/100, \space \space Junior Year: 91/100
+		\item Awards: \\
+		 - \space \space Academic Excellence Scholarship , Sun Yat-sen University, 2020\\
+		- \space \space Student Elite Representative, School of Computer Science and Engineering, Sun Yat-sen University, 2021\\
+		
+
+    \end{zitemize}
+\vspace{0.2cm}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  PUBLICATIONS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{\large \textbf{Publications}} 
+\begin{enumerate}[itemindent=0em]
+\item \textbf{Ruoqi Wang}, Ziwang Huang, Haitao Wang, Hejun Wu, ``AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data, " \textit{IEEE International Conference on Bioinformatics and Biomedicine \textbf{(IEEE BIBM)}}, under review, preprint arXiv:2108.12565, 2021.
+
+\item Ziwang Huang, Hua Chai, \textbf{Ruoqi Wang}, Haitao Wang, Yuedong Yang, Hejun Wu, ``Integration of patch features through self-supervised learning and transformer for survival analysis on whole slide images",  \textit{Medical Image Computing and Computer-Assisted Intervention Society \textbf{(MICCAI)}}, \textbf{accepted}, 2021.
+
+\item Haitao Wang, Hejun Wu, \textbf{Ruoqi Wang}, Ziwang Huang, ``Deep Discriminative Feature Learning for Concrete Surface Damage Classification," \textit{IEEE Transactions on Industrial Informatics \textbf{(IEEE TII)}}, under review, 2021.
+
+
+\item Haitao Wang, Yongqiang You, Hejun Wu, \textbf{Ruoqi Wang}, ``Discrete Contrastive Learning for Sample-Efficient Reinforcement Learning," \textit{AAAI Conference on Artificial Intelligence \textbf{(AAAI)}}, under review, 2022.
+\end{enumerate}
+
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  ACADEMIC PROJECTS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{\large \textbf{Research Projects}} %% (Or "Research", select as appropriate)
+
+%%% ----- Best way to write items (Credit - FAANGPath)
+        % \item Achieved X\% growth for XYZ using A, B, and C skills.
+        % \item Led XYZ which led to X\% of improvement in ABC
+        % \item Developed XYZ that did A, B, and C using X, Y, and Z. 
+
+
+%%%%%%% ----------------------------------- Role 1 ----------------------------------- %%%%%%%
+\centerline{\textcolor{UI_blue}{Artificial Intelligence in Healthcare}}
+\vspace {6pt}
+\subsection*{Asymmetrical multi-modal survival analysis using medical images and structured data.\hfill May. 2021 --- Aug. 2021} 
+\subtext{Machine Perception Laboratory, SYSU }
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+       \item I independently designed an asymmetrical multi-modal attention mechanism (AMMA) to generate more flexible joint representation of medical images and structured data. 
+		\item Different from previous works, AMMA can effectively utilize the intrinsic information within every modality and flexibly adapt to the modalities of different importance.
+		\item I designed and conducted various experiments to verify the effectiveness of the new model.  On public datasets from TCGA, the results of the proposed method are 5\%-6\% higher (C-index) than other SOTA methods. 
+        \item The article \textit{``AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data"} is submitted to IEEE BIBM.
+    \end{itemize}
+
+
+\subsection*{Integration of Patch Features of Whole Slide Images through Self-Supervised Learning and Transformer for Survival Analysis. \hfill Dec. 2020 --- Mar. 2021}
+\subtext{Machine Perception Laboratory, SYSU}  
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+        \item I conducted experiments on the influence of self-supervised learning for extracting the features of whole slide images (WSIs) and researched the effect of positional embedding of WSI patches. 
+		\item The approach with self-supervised learning and position embedding outperformed the previous best approach by an average of 3\% (C-index) in survival prediction on three datasets.
+		\item The article \textit{``Integration of Patch Features through Self-Supervised Learning and Transformer for Survival Analysis on Whole Slide Images"} is accepted by MICCAI 2021.
+    \end{itemize}
+
+
+
+\subsection*{The effect of surgery and drug treatment on the visual field progression of different glaucoma patients and glaucoma patients with comorbidities.\hfill Dec. 2020 --- Mar. 2021} 
+\subtext{Zhongshan Ophthalmic Center, SYSU }
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+       \item I designed an efficient sample matching method based on the Levenshtein distance algorithm to solve the problems of inaccurate and incomplete information in the original medical dataset.  
+		\item The proposed method increased the number of effective samples by 30\%, facilitating subsequent experiments.
+		\item The results are expected to be published in 2022.
+
+    \end{itemize}
+
+
+\subsection*{Machine disease diagnosis on small and unbalanced datasets with multi-modal data. \hfill Nov. 2020 --- Dec. 2020} 
+\subtext{Machine Perception Laboratory, SYSU} 
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+        \item I used multi-modal data (clinical data and omics data of patients with nasopharyngeal carcinoma) to get better joint representations for classification. 
+		\item I proved the complementarity between data from two modalities.
+		\item I studied the application of machine learning methods on small and uneven datasets. 
+    \end{itemize}
+\vspace {12pt}
+
+\centerline{\textcolor{UI_blue}{Artificial Intelligence in Industry}}
+\vspace {-10pt}
+\subsection*{Deep discriminative feature learning on concrete surface images.\hfill Jul. 2021 --- Sep. 2021} 
+\subtext{Machine Perception Laboratory, SYSU } 
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+		\item I participated in researching a novel end-to-end framework named Deep Discriminative Feature Learning (DDFL) based on Collective Matrix Factorization (CMF) and Vision Transformer (ViT) to extract and select discriminative features of crack images. 
+		\item The learning framework integrates the deep feature learning and feature selection so that more
+discriminative representation can be learned for crack classification.
+		\item  Our method outperforms other mainstream classification models on four datasets in varieties of evaluation criteria.
+		\item The article  \textit{``Deep Discriminative Feature Learning for Concrete Surface Damage Classification"} is submitted to IEEE TII.
+    \end{itemize}
+
+\subsection*{Smart balanced delivery task scheduling. \hfill Jul. 2021 --- Aug. 2021} 
+\subtext{Machine Perception Laboratory, SYSU } 
+\vspace {6pt}
+My contributions:
+    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
+        \item I optimized one of the proposed algorithms by reducing loops and superimpose distance and time matrices, making the computational complexity become 1/2 of the original method. 
+		\item I re-implemented a baseline method GCN-NPEC. 
+		\item The results are expected to be published in Dec. 2021.
+    \end{itemize}
+
+
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SKILLS
+%%%%%%% --------------------------------------------------------------------------------------
+\section{\large \textbf{Technical Skills}}
+\begin{zitemize}
+\item \textbf{Research Areas:} \\ 
+			Artificial intelligence in healthcare, \space machine learning, \space deep learning \space and \space computer vision.
+
+\vspace{0.2cm}
+
+\item \textbf{Programming Languages:} \\ 
+			Familiar \space with \space C/C++, \space Python, \space and \space MATLAB.
+
+\vspace{0.2cm}
+
+\item \textbf{Software Frameworks \& Tools:}\\
+			 Familiar \space with \space PyTorch, \space OpenCV, \space NumPy, \space Scikit-learn, \space Pandas,  \space CUDA, \space LaTeX, \space and \space MySQL.
+
+
+\end{zitemize}
+
+
+
+%%%%%%% ---------------------------- END DOC HERE ---------------------------- %%%%%%% 
+\end{document}
