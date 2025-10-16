@@ -1,61 +1,23 @@
-%-------------------------
-% Entry-level Resume in LaTeX
-% Last Edits - July 19, 2021
-% Author : Jayesh Sanwal
-% Reach out to me on LinkedIn(/in/jsanwal), with any suggestions, ideas, etc.
-%------------------------
-
-%%-------------------------------------
-% Author Notes here -
-% 1) Change " Author+an = {N=highlight}" in "Publications.bib", where N is the number at which your name appears
-% 2) Use "\vspace" wisely, that would change spacing, and is currently being used as a hacky fix
-% 3) Do not delete the fonts in the left side
-% 4) Use the "Rich Text" feature on Overleaf - On the top panel next to source. Makes it much easier for starters on LaTeX to use this template
-% 5) Do NOT use periods at the end of bullet points, the sample (ipsum) text might have it
-% 6) Use "maxbibnames" on this file to change the maximum number of authors on the paper (Credits: Dr. Natasha Krell) - Default is 3, but change line 92 to add authors
-
-%%-------------------------------------
-% Changes from last version -
-% 1) Removed areas of Expertise as a separate section - integrated into the summary section
-% 2) Changed Focus to Academic Projects instead of Education
-% 3) Made the integrated summary 3 lines over 1
-% 4) Changed spacing between sections and bullets
-% 5) Changed the number of authors to be user customized
-
-%%-------------------------------------
-% Changes to be made here -
-% 1) Shift to Class file, make changes here
-% 2) Use a fonts folder
-% 3) Incorporate Leadership & volunteering together
-% 4) Remove \vspace based 'hacky' fixes
-%%-------------------------------------
-
-
-\documentclass[a4,11pt]{article}
-
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
-%%%%%%% --------------------------------------------------------------------------------------
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
- \usepackage{marvosym}
+\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
+\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage{multicol}
-\usepackage{hyperref}
-\usepackage{csquotes}
+\usepackage[english]{babel}
 \usepackage{tabularx}
-\hypersetup{colorlinks=true,urlcolor=black}
-\usepackage[11pt]{moresize}
-\usepackage{setspace}
-\usepackage{fontspec}
-\usepackage[inline]{enumitem}
-\usepackage{array}
+\usepackage{multicol}
+\usepackage{CJKutf8}
+\input{glyphtounicode}
+\usepackage{academicons}
+\usepackage{color}
 \usepackage{hyperref}
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -63,268 +25,354 @@
     urlcolor=blue,
     citecolor=cyan,
 }
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\usepackage{anyfontsize}
 
-%%%% Set Margins
-\usepackage[margin=1.2cm, top=1.2cm]{geometry}
+\usepackage[default]{sourcesanspro}
+\usepackage[T1]{fontenc}
 
-%%%% Set Fonts
-\setmainfont[
-BoldFont=SourceSansPro-Semibold.otf, %SourceSansPro-Bold.otf
-ItalicFont=SourceSansPro-RegularIt.otf
-]{SourceSansPro-Regular.otf}
-\setsansfont{SourceSansPro-Semibold.otf}
-
-%%%% Set Page
 \pagestyle{fancy}
 \fancyhf{} 
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-%%%% Set URL Style
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
 \urlstyle{same}
 
-%%%% Set Indentation
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-%%%% Set Secondary Color
-\definecolor{UI_blue}{RGB}{32, 64, 151}
-
-%%%% Define New Commands
-\usepackage[style=nature, maxbibnames=3]{biblatex}
-\addbibresource{Publications.bib}
-
-%%%% Bold Name in Publications
-\renewcommand*{\mkbibnamegiven}[1]{%
-\ifitemannotation{highlight}
-{\textbf{#1}}
-{#1}}
-
-\renewcommand*{\mkbibnamefamily}[1]{%
-\ifitemannotation{highlight}
-{\textbf{#1}}
-{#1}}
-
-%%%% Set Sections formatting
 \titleformat{\section}{
-\color{UI_blue} \scshape \raggedright \large 
-}{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
-
-%%%% Set Subtext Formatting
-\newcommand{\subtext}[1]{
-#1\par\vspace{-0.2cm}}
-
-% \newcommand{\subtextit}[1]{\vspace{0.15cm}
-% \textit{ #1 \vspace{-0.2cm}} }
-
-%%%% Set Item Spacing
-\setlist[itemize]{align=parleft,left=0pt..1em}
-
-%%%% New Itemize "Zitemize" Formatting - tighter spacing than itemize
-\newenvironment{zitemize}{
-\begin{itemize}\itemsep0pt \parskip0pt \parsep1pt}
-{\end{itemize}\vspace{-0.5cm}}
+  \vspace{-4pt}\centering
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
 
 
-%%%% Define Skills Bold Formatting
-\newcommand{\hskills}[1]{
-\textbf{\bfseries #1} }
+\pdfgentounicode=1
 
-%%%% Set Subsection formatting
-\titleformat{\subsection}{\vspace{-0.1cm} 
-\bfseries \fontsize{11pt}{2cm}}{}{0em}{}[\vspace{-0.2cm}]
+\newcommand{\resumeItem}[1]{
+  \item{
+    {#1 \vspace{-2pt}}
+  }
+}
 
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  END OF "DO NOT TOUCH" REGION
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%% --------------------------------------------------------------------------------------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{ #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{#1} & \textit{ #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  HEADER
-%%%%%%% --------------------------------------------------------------------------------------
+\begin{CJK}{UTF8}{gbsn}
+
 \begin{center}
+    {\huge Ruoqi Wang} \\ \vspace{2pt}
 
-    \begin{minipage}[b]{0.9\textwidth}
-            \centering
-            {\Huge Ruoqi Wang} \\ %
-            \vspace{0.2cm}
-			   Homepage: \href{https://wang-rq.github.io}{wang-rq.github.io} \space \space \space \space \space \space \space \space \space \space \space \space
-Email: \href{mailto:wangrq29@mail2.sysu.edu.cn}{wangrq29@mail2.sysu.edu.cn} \space \space \space \space \space \space \space \space \space \space \space \space 
-Tel: (+86) 132-0206-7930 
-	\vspace{0.1cm}
-    \end{minipage}% 
-
+    Ph.D. Candidate\\
+    The Hong Kong University of Science and Technology (Guangzhou) \\
+    No.1 Du Xue Rd, Nansha District, Guangzhou, China
+    \begin{multicols}{2}
+    \begin{flushleft}
     
-\vspace{-0.15cm} 
+    Email: \href{mailto:{rwang280@connect.hkust-gz.edu.cn}}{rwang280@connect.hkust-gz.edu.cn} \\
+    Phone: \href{{your phone number}}{(+86)13202067930} \\
+    URL: \href{{https://wang-rq.github.io}}{https://wang-rq.github.io} \\
+    
+    \end{flushleft}
+    
+    \begin{flushright}
 
+    GitHub: \href{{https://github.com/wang-rq}}{https://github.com/wang-rq}\\
+    Google Scholar: \href{{https://scholar.google.com/citations?user=AHk1W2EAAAAJ&hl=zh-CN}}{Ruoqi Wang} \\
+    Orcid: \href{{https://orcid.org/0009-0005-3513-1945}}{0009-0005-3513-1945}
+    
+    
+    \end{flushright}
+    \end{multicols}
 \end{center}
 
+%-----------EDUCATION-----------
+\section{\Large{Education}}
 
+\textbf{The Hong Kong University of Science and Technology (Guangzhou),\space \space \space \space  Ph.D. Student. \space \space \space \space     \hfill Aug. 2022 -- Jun. 2026 (Expected)} 
+\begin{itemize}
+        \vspace{-2pt}
+        \item \textbf{Program}: Ph.D. in Data Science and Analytics
+        \vspace{-2pt}
+        \item \textbf{GPA}: 3.9/4.0
+    \end{itemize}
 
-
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  EDUCATION
-%%%%%%% --------------------------------------------------------------------------------------
-\section{\large \textbf{Education}}
-
-\subsection*{Sun Yat-sen University (SYSU),\space \space \space \space  B.Eng., \space \space \space \space    School of Computer Science and Engineering. \hfill Sep. 2018 --- Jun. 2022 } 
-    \begin{zitemize}
-        \item Major: Computer Science and Technology
-		\item Weighted Average Grade: \textbf{89/100} (GPA: \textbf{3.8/4.0}) \\
-		 - \space \space Freshman Year: 85/100, \space \space Sophomore Year: 91/100, \space \space Junior Year: 91/100
-		\item Awards and Honors: \\
-		 - \space \space Academic Excellence Scholarship, Sun Yat-sen University, 2020\\
+    
+\textbf{Sun Yat-sen University,\space \space \space \space  B.Eng. \space \space \space \space     \hfill Sept. 2018 -- Jun. 2022 } 
+\begin{itemize}
+        \vspace{-2pt}
+        \item \textbf{Major}: Computer Science and Technology
+        \vspace{-2pt}
+        \item \textbf{GPA}: 3.8/4.0
+        \vspace{-2pt}
+		\item \textbf{Awards and Honors}: \\
+        \vspace{2pt}
+		- \space \space Academic Excellence Scholarship, Sun Yat-sen University, 2020 \& 2021\\
+        \vspace{2pt}
 		- \space \space Student Elite Representative, School of Computer Science and Engineering, Sun Yat-sen University, 2021\\
-		
-
-    \end{zitemize}
-\vspace{0.2cm}
-
-
-
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  PUBLICATIONS
-%%%%%%% --------------------------------------------------------------------------------------
-\section{\large \textbf{Research Papers}} 
-\begin{enumerate}[itemindent=0em]
-
-\centerline{\textcolor{UI_blue}{Accepted}}
-\item Ziwang Huang, Hua Chai, \textbf{Ruoqi Wang}, Haitao Wang, Yuedong Yang, Hejun Wu, ``Integration of patch features through self-supervised learning and transformer for survival analysis on whole slide images",  in \textit{International Conference on Medical Image Computing and Computer-Assisted Intervention \textbf{(MICCAI)}}, pages 561--570, 2021.
-
-\item \textbf{Ruoqi Wang}, Ziwang Huang, Haitao Wang, Hejun Wu, ``AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data, " in \textit{IEEE International Conference on Bioinformatics and Biomedicine \textbf{(IEEE BIBM)}}, pages 757--760, 2021 
-
-\vspace {6pt}
-
-\centerline{\textcolor{UI_blue}{Ongoing}}
-\vspace {-8pt}
-
-\item Haitao Wang, Hejun Wu, \textbf{Ruoqi Wang}, Ziwang Huang, ``Deep Discriminative Feature Learning for Concrete Surface Damage Classification," under review, 2022.
-
-\item Haitao Wang, Yongqiang You, Hejun Wu, \textbf{Ruoqi Wang}, ``Discrete Contrastive Representation Learning for Reinforcement Learning,", under review, 2022.
-\end{enumerate}
-
-
-
-
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  ACADEMIC PROJECTS
-%%%%%%% --------------------------------------------------------------------------------------
-\section{\large \textbf{Research Projects}} %% (Or "Research", select as appropriate)
-
-%%% ----- Best way to write items (Credit - FAANGPath)
-        % \item Achieved X\% growth for XYZ using A, B, and C skills.
-        % \item Led XYZ which led to X\% of improvement in ABC
-        % \item Developed XYZ that did A, B, and C using X, Y, and Z. 
-
-
-%%%%%%% ----------------------------------- Role 1 ----------------------------------- %%%%%%%
-\centerline{\textcolor{UI_blue}{Artificial Intelligence in Healthcare}}
-\vspace {6pt}
-\subsection*{Asymmetrical multi-modal survival analysis using medical images and structured data.\hfill May. 2021 --- Aug. 2021} 
-\subtext{Machine Perception Laboratory, SYSU }
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-       \item I independently designed an asymmetrical multi-modal attention mechanism (AMMA) to generate more flexible joint representation of medical images and structured data. 
-		\item Different from previous works, AMMA can effectively utilize the intrinsic information within every modality and flexibly adapt to the modalities of different importance.
-		\item I designed and conducted various experiments to verify the effectiveness of the new model.  On public datasets from TCGA, the results of the proposed method are 5\%-6\% higher (C-index) than other SOTA methods. 
-        \item The article \textit{``AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data"} was accepted as a short paper by IEEE BIBM.
-    \end{itemize}
-
-
-\subsection*{Integration of Patch Features of Whole Slide Images through Self-Supervised Learning and Transformer for Survival Analysis. \hfill Dec. 2020 --- Mar. 2021}
-\subtext{Machine Perception Laboratory, SYSU}  
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-        \item I conducted experiments on the influence of self-supervised learning for extracting the features of whole slide images (WSIs) and researched the effect of positional embedding of WSI patches. 
-		\item The approach with self-supervised learning and position embedding outperformed the previous best approach by an average of 3\% (C-index) in survival prediction on three datasets.
-		\item The article \textit{``Integration of Patch Features through Self-Supervised Learning and Transformer for Survival Analysis on Whole Slide Images"} was accepted by MICCAI 2021.
+        
+		- \space \space Excellent Undergraduate Thesis (\textbf{rank 1/444}), Sun Yat-sen University, 2022\\
     \end{itemize}
 
 
 
-\subsection*{The effect of surgery and drug treatment on the visual field progression of different glaucoma patients and glaucoma patients with comorbidities.\hfill Dec. 2020 --- Mar. 2021} 
-\subtext{Zhongshan Ophthalmic Center, SYSU }
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-       \item I designed an efficient sample matching method based on the Levenshtein distance algorithm to solve the problems of inaccurate and incomplete information in the original medical dataset.  
-		\item The proposed method increased the number of effective samples by 30\%, facilitating subsequent experiments.
+%-----------Research Topics-----------
+% \section{\Large{Research Interests}}
+% \begin{itemize}
+% \item {\textbf{AI for Astronomy \& Scientific Imaging}:} Radio interferometric imaging/reconstruction, generative models, inverse problem, application of large models.
+% \item {\textbf{Vision–Language models \& Multi-Modal Learning}:} Especially for scientific multi-modal data.
+% \item {\textbf{Robust \& Generalizable Representation Learning}:  Domain adaptation, domain generalization, data augmentations. }
+% \item {\textbf{Semi-/Self-Supervised Learning}: Use of unlabeled or sparsely labeled scientific data. }
+% \item {\textbf{AI for Healthcare}: Medical image analysis, multi-modal learning for healthcare. }
+% \end{itemize}
 
-    \end{itemize}
+\section{\Large{Research Interests}}
 
+\textit{Theme: Trustworthy \& efficient machine learning for scientific and real-world application.}
 
-\subsection*{Machine disease diagnosis on small and unbalanced datasets with multi-modal data. \hfill Nov. 2020 --- Dec. 2020} 
-\subtext{Machine Perception Laboratory, SYSU} 
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-        \item I used multi-modal data (clinical data and omics data of patients with nasopharyngeal carcinoma) to get better joint representations for classification. 
-		\item I proved the complementarity between data from two modalities.
-		\item I studied the application of machine learning methods on small and uneven datasets. 
-    \end{itemize}
-\vspace {12pt}
+\begin{itemize}
+\item \textbf{Scientific \& Physics-Guided ML}: inverse problems; data reconstruction; physical priors; computational imaging
+\item \textbf{Foundation \& Multi-modal Models}: vision–language models; cross-domain alignment; scientific foundation models
+\item \textbf{Reliable \& Efficient Learning}: robustness/generalization; semi-/self-/weak supervision; domain adaptation
+\item \textbf{AI Applications}: astronomy, healthcare and industry
+\end{itemize}
 
-\centerline{\textcolor{UI_blue}{Artificial Intelligence in Industry}}
-\vspace {-10pt}
-\subsection*{Deep discriminative feature learning on concrete surface images.\hfill Jul. 2021 --- Sep. 2021} 
-\subtext{Machine Perception Laboratory, SYSU } 
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-		\item I participated in researching a novel end-to-end framework named Deep Discriminative Feature Learning (DDFL) based on Collective Matrix Factorization (CMF) and Vision Transformer (ViT) to extract and select discriminative features of crack images. 
-		\item The learning framework integrates the deep feature learning and feature selection so that more
-discriminative representation can be learned for crack classification.
-		\item  Our method outperforms other mainstream classification models on four datasets in varieties of evaluation criteria.
-		\item The article  \textit{``Deep Discriminative Feature Learning for Concrete Surface Damage Classification"} was submitted to IEEE TII.
-    \end{itemize}
+%-----------PUBLICATIONS-----------
+\section{\Large{Publications}}
 
-\vspace {6pt}
+\textbf{Conference Papers:}
+ \begin{itemize}
+    \item{
+    \underline{Ruoqi Wang}, Haitao Wang, Qiong Luo, "{GalaxAlign: Mimicking Citizen Scientists' Multimodal Guidance for Galaxy Morphology Analysis}", arXiv preprint arxiv.org/abs/2411.19475, accepted by 33rd ACM International Conference on Multimedia (ACM MM 2025).
+    }
+    
+    \item{
+    \underline{Ruoqi Wang}, Haitao Wang, Qiong Luo, Feng Wang, Hejun Wu, "{VisRec: A Semi-Supervised Approach to Radio Interferometric Data Reconstruction}", Proceedings of the AAAI Conference on Artificial Intelligence. Vol. 39. No. 1. 2025.
+    }
+    
+    \item{
+    \underline{Ruoqi Wang}, Zhuoyang Chen, Jiayi Zhu, Qiong Luo, Feng Wang, "{PolarRec: Improving Radio Interferometric Data Reconstruction Using Polar Coordinates}", The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), pages 12841-12850, 2024. 
+    }
 
-\centerline{\textcolor{UI_blue}{Smart City}}
-\vspace {-12pt}
+    \item{
+    \underline{Ruoqi Wang}, Zhuoyang Chen, Qiong Luo, Feng Wang, "{A Conditional Denoising Diffusion Probabilistic Model for Radio Interferometric Image Reconstruction}", 26th European Conference on Artificial Intelligence (ECAI), pages 2499 - 2506, 2023.
+    }
 
-\subsection*{Smart balanced delivery task scheduling based on TSP solver. \hfill Jul. 2021 --- Aug. 2021} 
-\subtext{Machine Perception Laboratory, SYSU } 
-\vspace {6pt}
-My contributions:
-    \begin{itemize}[topsep = 0 pt, itemsep = 0 pt, parsep = 1 pt]
-        \item I optimized one of the proposed algorithms by reducing loops and superimpose distance and time matrices, making the computational complexity become 1/2 of the original method. 
-		\item I re-implemented a baseline method GCN-NPEC. 
-    \end{itemize}
+    \item{
+    \underline{Ruoqi Wang}, Ziwang Huang, Haitao Wang, Hejun Wu, "{AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data}", IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pages 757-760, 2021.
+    }
 
+    \item{
+    Ziwang Huang, Hua Chai, \underline{Ruoqi Wang}, Haitao Wang, Yuedong Yang and Hejun Wu, "{Integration of Patch Features through Self-Supervised Learning and Transformer for Survival Analysis on Whole Slide Images}", International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), pages 561–570, 2021.
+    }
 
-
-
-
-%%%%%%% --------------------------------------------------------------------------------------
-%%%%%%%  SKILLS
-%%%%%%% --------------------------------------------------------------------------------------
-\section{\large \textbf{Technical Skills}}
-\begin{zitemize}
-
-\vspace{0.2cm}
-
-\item \textbf{Programming Languages:} \\ 
-			Familiar \space with \space C/C++, \space Python, \space and \space MATLAB.
-
-\vspace{0.2cm}
-
-\item \textbf{Software Frameworks \& Tools:}\\
-			 Familiar \space with \space PyTorch, \space CUDA, \space OpenMP, \space MPI, \space OpenCV, \space NumPy, \space Scikit-learn, \space Pandas,  \space LaTeX, \space and \space MySQL.
+ \end{itemize}
 
 
-\end{zitemize}
+%-----------Preprints-----------
+\vspace{2pt}
+\textbf{Ongoing Papers:}
+\begin{itemize}
+    \item{
+    \underline{Ruoqi Wang}, Haitao Wang, Shaojie Guo, Qiong Luo, "{Improving Out-of-Domain Robustness with Targeted Augmentation in Frequency and Pixel Spaces}", arXiv preprint arxiv.org/abs/2505.12317, 2025.
+    }
+
+    \item{
+    Zhuoyang Chen, \underline{Ruoqi Wang}, Qiong Luo, "{ProtAug: Utilizing Self-Supervised Protein Language Models for Effective Protein Sequence Augmentation}", 2025.
+    }
+\end{itemize}
+
+
+%-----------Research Experience-----------
+\section{\Large{Research Experience}}
+
+% \textit{\textbf{A.} Ph.D. Phase (2022 - Present)}
+% \begin{itemize}
+%     \item \textbf{Thesis Topic: } Machine Learning for Astronomical Data Reconstruction and Analysis
+%     \item \textbf{Description: } Proposed a machine-learning-based pipeline for radio-interferometric imaging and analysis: \\
+%     - Imaging: VIC-DDPM (spectral+spatial diffusion), PolarRec (polar transformer), VisRec (semi-supervised). \\
+
+%     - Analysis: GalaxAlign for morphology classification \& retrieval; domain adaptation across telescopes. \\
+
+%     - Outcome: An integrated pipeline containing low-level reconstruction and high-level analysis, enabling scalable and robust galaxy morphology studies.
+% \end{itemize}
+
+% \textit{\textbf{A.} Undergraduate Phase (2020 - 2022)}
+% \begin{itemize}
+%     \item \textbf{Thesis Topic: } Machine-Learning-Based Survival Analysis on Multi-Modal Medical Data
+%     \item \textbf{Description: } Proposed an multimodal survival model with WSI-guided attention over gene expression: \\
+%     - Problem: Prior WSI+gene survival models ignore whole-slide context, assume equal modality importance. \\
+%     - Method: AMMASurv with AMMA—heterogeneous directed graphs where WSI induces gene-expression features (asymmetric flow).\\
+%     - Result: Better performance robust multi-modal survival prediction.
+    
+% \end{itemize}
+
+\textbf{Ph.D. Phase} \hfill 2022--Present \\
+\emph{Topic: Machine Learning for Astronomical Data Reconstruction and Analysis}
+\begin{itemize}
+  \item \textbf{Problem:} Sparse/noisy visibilities, artifact-prone imaging, label scarcity, limited robustness, and poor generalization.
+  \item \textbf{Method:} \textbf{VIC-DDPM} (spectral+spatial diffusion), \textbf{PolarRec} (polar transformer), \textbf{VisRec} (semi-supervised); \textbf{GalaxAlign} for morphology classification \& retrieval; \textbf{Pixel-Frequency Connect} for domain adaptation across different measuring instruments.
+  \item \textbf{Impact:} End-to-end pipeline from low-level reconstruction to high-level analysis; scalable and robust galaxy morphology studies.
+\end{itemize}
+
+\textbf{Undergraduate Phase} \hfill 2020--2022 \\
+\emph{Topic: Machine-Learning–Based Survival Analysis on Multi-modal Medical Data}
+\begin{itemize}
+  \item \textbf{Problem:} Prior WSI + gene expression survival models ignore whole-slide context, assume equal modality importance, and are sensitive to noisy gene expression.
+  \item \textbf{Method:} \textbf{AMMASurv} with \textbf{AMMA}---heterogeneous directed graphs; WSI-guided attention induces gene-expression features (asymmetric information flow).
+  \item \textbf{Impact:} Improved multi-modal survival prediction on two public cancer datasets.
+\end{itemize}
 
 
 
-%%%%%%% ---------------------------- END DOC HERE ---------------------------- %%%%%%% 
+%-----------Teaching Experience-----------
+\section{\Large{Teaching \& Mentoring}}
+\begin{itemize}
+    \item  Teaching Assistant:  \\
+    - \textit{Deep Learning in Data Science}, The Hong Kong University of Science and Technology (Guangzhou).   \hfill Spring 2025 \\
+    \vspace{2pt}
+    - \textit{Physical Education — Tennis}, The Hong Kong University of Science and Technology (Guangzhou). \hfill Fall 2024
+    \item  Invited Lecturer: \\
+    - \textit{Artificial Intelligence Practice 2025}, Sun Yat-sen University. \hfill Summer 2025
+    
+\end{itemize}
+
+
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\Large{Skills}}
+ \begin{itemize}
+    \item{
+     \textbf{Programming}{: Python; C/C++; MATLAB; JavaScript.} 
+     }
+     \item{
+     \textbf{Libraries/Tools}{: Includes PyTorch; OpenCV; NumPy; Scipy; Torchvision; Pandas; Scikit-learn; Matplotlib; Seaborn.}
+     }\\
+     \item{\textbf{Systems/HPC}{: CUDA; multi-GPU (DDP/Deepspeed); Slurm; Docker/conda; OpenMP, Open MPI.\\}}
+     \item{\textbf{Astro}: Astropy; radio interferometry simulators; FFT pipelines; FITS/HDF5.}
+     \item{
+     \textbf{Languages}{: Mandarin (native); English (fluent)}
+     }
+     \item{
+     \textbf{Hobbies}{: Tennis; Reading; Traveling}
+     }
+ \end{itemize}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\Large{Service}}
+\begin{itemize}
+    \item Conference Reviewer: CVPR 2024-2025, ICCV 2025, ICML 2025, NeurIPS 2024-2025, ICLR 2025-2026, AAAI 2024-2025, ACM MM 2025.
+    \item Journal Reviewer: Publications of the Astronomical Society of Australia.
+\end{itemize}
+
+\section{\Large{References}}
+\begin{itemize}
+    \item \textbf{Prof. Dr. Qiong Luo},  Email: \href{mailto:{luo@ust.hk}}{luo@ust.hk}\\
+    Ph.D. advisor, Department of Computer Science and Engineering, The Hong Kong University of Science and Technology 
+    
+    \item \textbf{Prof. Dr. Hejun Wu}, Email: \href{mailto:{wuhejun@mail.sysu.edu.cn}}{wuhejun@mail.sysu.edu.cn}  \\
+    Undergraduate Advisor, School of Computer Science and Engineering, Sun Yat-sen University \\
+    
+
+    \item \textbf{Prof. Dr. Feng Wang}, Email: \href{mailto:{fengwang@gzhu.edu.cn}}{fengwang@gzhu.edu.cn} \\
+    Collaborator, Center for Astrophysics, Guangzhou University \\
+    
+\end{itemize}
+
+
+% %-----------Research Topics-----------
+% \vspace{2pt}
+% \section{\Large{Research Topics}}
+
+% \textbf{Astronomical data reconstruction:} Sparse to dense reconstruction of astronomical data.
+
+% \textbf{Galaxy Image Recovery:} Removing noise and artifacts in galaxy images.
+
+
+
+% %-----------PUBLICATIONS-----------
+% \vspace{2pt}
+% \section{\Large{Publications}}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \item{
+%     \underline{Ruoqi Wang}, Zhuoyang Chen, Jiayi Zhu, Qiong Luo, Feng Wang, "\textbf{PolarRec: Radio Interferometric Data Reconstruction with Polar Coordinate Representation}", The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, accepted. 
+%     }
+
+%     \item{
+%     \underline{Ruoqi Wang}, Zhuoyang Chen, Qiong Luo, Feng Wang, "\textbf{A Conditional Denoising Diffusion Probabilistic Model for Radio Interferometric Image Reconstruction}", 26th European Conference on Artificial Intelligence (ECAI), pages 2499 - 2506, 2023.
+%     }
+
+%     \item{
+%     \underline{Ruoqi Wang}, Ziwang Huang, Haitao Wang, Hejun Wu, "\textbf{AMMASurv: Asymmetrical Multi-Modal Attention for Accurate Survival Analysis with Whole Slide Images and Gene Expression Data}", IEEE International Conference on Bioinformatics and Biomedicine (BIBM), pages 757-760, 2021.
+%     }
+
+%     \item{
+%     Ziwang Huang, Hua Chai, \underline{Ruoqi Wang}, Haitao Wang, Yuedong Yang and Hejun Wu, "\textbf{Integration of Patch Features through Self-Supervised Learning and Transformer for Survival Analysis on Whole Slide Images}", International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI), pages 561–570, 2021
+%     }
+
+%  \end{itemize}
+
+
+% %-----------Preprints-----------
+% \vspace{2pt}
+% \section{\Large{Preprints}}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \item{
+%     \underline{Ruoqi Wang}, Haitao Wang, Qiong Luo, Feng Wang, Hejun Wu, "\textbf{VisRec: A Semi-Supervised Approach to Radio Interferometric Data Reconstruction}", arXiv preprint arXiv:2403.00897, 2024. 
+%     }
+% \end{itemize}
+
+
+% %-----------PROGRAMMING SKILLS-----------
+% \vspace{2pt}
+% \section{\Large{Skills and Interests}}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \item{
+%      \textbf{Programming Languages}{: C/C++, Python, MATLAB} \\
+%      \textbf{Libraries/Tools}{: OpenCV, PyTorch, NumPy, Scikit-learn, Pandas, LaTeX}\\
+%      \textbf{Languages}{: Mandarin (native), English (fluent)} \\
+%      \textbf{Interests}{: Tennis and Traveling}
+     
+%     }
+%  \end{itemize}
+
+
+\end{CJK}
+
 \end{document}
